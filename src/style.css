@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600&display=swap');
+
+:root{
+    --primary-bg-color: #1d9134;
+    --secondary-bg-color: #62ca75;
+    --primary-text-color: #fff;
+    --btn-title: 20px;
+    --tab-link-title: 18px;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+body::-webkit-scrollbar-track {
+    background-color: #e4e4e4;
+}
+ 
+body::-webkit-scrollbar-thumb {
+    background-color: var(--primary-bg-color);
+}
+
+.tab-btns button, .dropdown-btn{
+    transition: all 0.2s ease-in-out;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+#root{
+    height: 100%;
+}
+
+.App {
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+    height: 100%;
+    background-color: rgb(217, 235, 223);
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("./img/bgimg1.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.tab-btns{
+    padding: 60px 0;
+}
+
+.tab-btns button{
+    padding: 10px 0;
+    width: 150px;
+    border: none;
+    font-size: var(--btn-title);
+    background-color: transparent; 
+    border: 1px solid rgba(255, 255, 255, 0.425);
+    color: var(--primary-text-color);
+}
+
+.tab-btns button:hover{
+    background-color: rgba(255, 255, 255, 0.425);
+    color: #fff;
+    border-color: transparent;
+}
+
+.activeTab {
+    background-color: rgba(255, 255, 255, 0.425) !important;
+    color: #fff !important;
+    border-color: transparent !important;
+}
+
+.dropdown-btn {
+    position: relative;
+    margin-top: 30px;
+    padding: 15px 0;
+    width: 300px;
+    font-size: var(--tab-link-title);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    text-decoration: none;
+    border: none;
+}
+
+.dropdown-btn:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    transition-delay: 400ms;
+    transition: all 500ms;
+    transform: skew(45deg) translate(-150%, 0);
+    z-index: 1;
+}
+
+.dropdown-btn:hover:after {
+    opacity: 0;
+    transform: skew(45deg) translate(0, 0) ;
+}
+
+.dropdown-btn:hover{
+    background-color: var(--secondary-bg-color);
+    color: #FFFFFF;
+}
+
+.tab1-logo{
+    padding: 50px 0;
+}
+
+.dropdown{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dropdown-content{
+    color: #000;
+    width: 300px;
+    background-color: var(--primary-bg-color);
+}
+
+.dropdown-content-img{
+    animation: spinAround 1s linear infinite;
+    padding: 20px 0;
+}
+
+@keyframes spinAround {
+    100% {
+        transform: rotate(360deg) scale(1) skew(1deg);
+    }
+}
+
+.modal-content-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-close:focus{
+    box-shadow: none !important;
+}
